@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Самые красивые места долины Луары: замки, городки, креман и замки-отели — подборка @anna.s.merci">
+<style>*,*::before,*::after{box-sizing:border-box}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Долина Луары</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,500;1,400;1,500&display=swap">
+<style>
+/* Пара к «Замкам-отелям Польши»: тот же тёмный лист, белые линии карты, акцент кремовым. Сначала карта долины, затем места по разделам. */
+:root{
+  --bg:#141517; --ink:#FFFFFF; --mute:rgba(255,255,255,.64); --rule:rgba(255,255,255,.12);
+  --line:rgba(255,255,255,.85); --river:#FFF3CC; --cream:#FFF3CC;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif; --serif:"Playfair Display",Georgia,"Times New Roman",serif;
+  color-scheme:dark;
+}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.5;letter-spacing:-.01em}
+.wrap{max-width:1180px;margin:0 auto;padding-block:36px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header{display:grid;gap:10px;margin-bottom:28px;justify-items:start}
+.lbl{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+h1{font-family:var(--serif);font-weight:500;font-size:clamp(36px,7vw,64px);line-height:.95;margin:0;text-transform:uppercase;text-wrap:balance}
+h1 em{display:block;text-transform:none;font-style:italic;font-weight:400;color:var(--cream)}
+.lead{color:var(--mute);max-width:58ch;margin:4px 0 0}
+.cta{display:inline-block;margin-top:8px;padding:14px 22px;background:var(--cream);color:var(--bg);font-weight:500;text-decoration:none;font-size:16px}
+.cta:hover,.cta:focus-visible{background:var(--ink);outline:none}
+.grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:40px;align-items:start}
+.map{position:sticky;top:calc(env(safe-area-inset-top,0px) + 16px);min-width:0}
+svg{width:100%;height:auto;display:block}
+.riv{fill:none;stroke:var(--line);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;opacity:.55}
+.riv.main{stroke:var(--river);stroke-width:5;opacity:1}
+.rl{fill:var(--river);font:italic 400 36px var(--serif)} .rl.s{fill:var(--mute);font-size:24px}
+.town circle{fill:var(--mute)} .town text{fill:var(--mute);font:500 20px var(--sans);letter-spacing:.06em;text-transform:uppercase}
+.paris text{fill:var(--ink);font:500 26px var(--sans)} .paris .sm{fill:var(--mute);font-size:20px}
+.pin{cursor:pointer;outline:none}
+.pin circle{fill:var(--bg);stroke:var(--ink);stroke-width:2}
+.pin text{fill:var(--ink);font:500 19px var(--sans);text-anchor:middle;pointer-events:none;font-variant-numeric:tabular-nums}
+.pin.fav circle{fill:var(--cream);stroke:var(--cream)} .pin.fav text{fill:var(--bg)}
+.pin.on circle,.pin:hover circle,.pin:focus-visible circle{fill:var(--ink);stroke:var(--ink)}
+.pin.on text,.pin:hover text,.pin:focus-visible text{fill:var(--bg)}
+.legend{display:flex;flex-wrap:wrap;gap:16px;margin-top:12px;font-size:13px;color:var(--mute)}
+.legend span{display:inline-flex;align-items:center;gap:8px}
+.legend i{width:12px;height:12px;border-radius:50%;border:1.5px solid var(--ink)}
+.legend i.f{background:var(--cream);border-color:var(--cream)}
+h2{font-family:var(--serif);font-weight:500;font-style:italic;font-size:26px;margin:0;color:var(--cream)}
+.sub{font-size:13px;color:var(--mute);margin:2px 0 10px}
+section+section{margin-top:36px}
+ol{list-style:none;margin:0;padding:0;display:grid}
+li{display:grid;grid-template-columns:32px minmax(0,1fr);gap:12px;padding:16px 0;border-top:1px solid var(--rule);scroll-margin-top:24px}
+li.on .n{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.n{width:26px;height:26px;border-radius:50%;border:1.5px solid var(--ink);display:grid;place-items:center;font-size:12px;font-weight:500;font-variant-numeric:tabular-nums}
+.fav .n{background:var(--cream);border-color:var(--cream);color:var(--bg)}
+.b{min-width:0}
+.t{font-weight:500;font-size:16px}
+.m{font-size:13px;color:var(--mute);margin-top:2px}
+li p{margin:6px 0 0;max-width:60ch}
+.lk{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.lk a{font-size:13px;padding:5px 10px;border:1px solid rgba(255,255,255,.4);color:var(--ink);text-decoration:none}
+.lk a:hover,.lk a:focus-visible{border-color:var(--cream);color:var(--cream);outline:none}
+footer{margin-top:44px;padding-top:20px;border-top:1px solid var(--rule);display:grid;gap:12px;justify-items:start;font-size:13px;color:var(--mute)}
+footer b{color:var(--ink);font-weight:500}
+@media (max-width:820px){.grid{grid-template-columns:1fr}.map{position:static}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="lbl">@anna.s.merci · подборка для вас</div>
+  <h1>Долина <em>Луары</em></h1>
+  <p class="lead">26 самых красивых мест: замки и сады, городки на закат, подвалы с креманом и где остаться на ночь в замке. Нажмите номер на карте — откроется место в списке.</p>
+  <a class="cta" href="https://maps.app.goo.gl/8UukhJi9kqQatten7" target="_blank" rel="noopener">Открыть список в Google Maps</a>
+</header>
+<div class="grid">
+  <div class="map"><svg viewBox="0 0 1057 509" role="img" aria-label="Карта долины Луары с местами из подборки">
+<path class="riv main" d="M1087.5,-95.1 L937.1,-11.7 L796.1,120.4 L725.6,189.9 L631.6,245.5 L561.1,252.5 L495.3,252.5 L363.7,301.2 L288.5,342.9 L208.6,384.6 L133.4,349.8 L30.0,308.1"/>
+<path class="riv" d="M993.5,356.8 L819.6,342.9 L725.6,294.2 L673.9,308.1 L636.3,301.2 L495.3,280.3 L382.5,294.2 L340.2,294.2"/><path class="riv" d="M570.5,391.5 L509.4,335.9 L391.9,349.8 L312.0,356.8 L274.4,342.9"/><path class="riv" d="M382.5,475.0 L283.8,412.4 L206.7,384.6"/>
+<text class="rl" x="429.50000000000006" y="231.62721893491062">Луара</text><text class="rl s" x="758.5" y="363.7278106508854">Шер</text><text class="rl s" x="452.99999999999994" y="384.58579881656664">Эндр</text><text class="rl s" x="312" y="461.0650887573946">Вьенна</text>
+<g class="town"><circle cx="495.3" cy="259.437869822484" r="4"/><text x="485.3" y="289.437869822484" text-anchor="end">Тур</text></g><g class="town"><circle cx="796.1" cy="120.38461538461222" r="4"/><text x="786.1" y="150.38461538461223" text-anchor="end">Блуа</text></g><g class="town"><circle cx="631.6" cy="245.53254437869978" r="4"/><text x="621.6" y="275.53254437869975" text-anchor="end">Амбуаз</text></g><g class="town"><circle cx="133.39999999999998" cy="349.8224852071011" r="4"/><text x="123.39999999999998" y="379.8224852071011" text-anchor="end">Сомюр</text></g><g class="town"><circle cx="283.8" cy="412.39644970413997" r="4"/><text x="273.8" y="442.39644970413997" text-anchor="end">Шинон</text></g>
+<g class="paris"><text x="1027" y="44" text-anchor="end">Париж ↗</text><text class="sm" x="1027" y="72" text-anchor="end">≈1 ч на поезде до Тура</text></g>
+<g class="pin" data-i="1" tabindex="0" role="button" aria-label="1. Шамбор"><circle cx="884.0" cy="102.2" r="20"/><text x="884.0" y="109.2">1</text></g>
+<g class="pin" data-i="2" tabindex="0" role="button" aria-label="2. Шенонсо"><circle cx="674.0" cy="304.7" r="20"/><text x="674.0" y="311.7">2</text></g>
+<g class="pin" data-i="3" tabindex="0" role="button" aria-label="3. Королевский замок Амбуаз"><circle cx="634.5" cy="243.2" r="20"/><text x="634.5" y="250.2">3</text></g>
+<g class="pin" data-i="4" tabindex="0" role="button" aria-label="4. Кло-Люсе"><circle cx="679.0" cy="245.5" r="20"/><text x="679.0" y="252.5">4</text></g>
+<g class="pin" data-i="5" tabindex="0" role="button" aria-label="5. Королевский замок Блуа"><circle cx="796.6" cy="123.4" r="20"/><text x="796.6" y="130.4">5</text></g>
+<g class="pin" data-i="6" tabindex="0" role="button" aria-label="6. Шеверни"><circle cx="856.3" cy="182.7" r="20"/><text x="856.3" y="189.7">6</text></g>
+<g class="pin" data-i="7" tabindex="0" role="button" aria-label="7. Азе-ле-Ридо"><circle cx="390.0" cy="350.5" r="20"/><text x="390.0" y="357.5">7</text></g>
+<g class="pin" data-i="8" tabindex="0" role="button" aria-label="8. Л'Ислет"><circle cx="375.1" cy="302.6" r="20"/><text x="375.1" y="309.6">8</text></g>
+<g class="pin" data-i="9" tabindex="0" role="button" aria-label="9. Юссе"><circle cx="307.9" cy="356.8" r="20"/><text x="307.9" y="363.8">9</text></g>
+<g class="pin" data-i="10" tabindex="0" role="button" aria-label="10. Шомон-сюр-Луар"><circle cx="726.5" cy="196.9" r="20"/><text x="726.5" y="203.9">10</text></g>
+<g class="pin" data-i="11" tabindex="0" role="button" aria-label="11. Вилландри"><circle cx="412.7" cy="252.1" r="20"/><text x="412.7" y="259.1">11</text></g>
+<g class="pin" data-i="12" tabindex="0" role="button" aria-label="12. Ланже"><circle cx="361.5" cy="262.8" r="20"/><text x="361.5" y="269.8">12</text></g>
+<g class="pin" data-i="13" tabindex="0" role="button" aria-label="13. Шинон"><circle cx="282.0" cy="413.6" r="20"/><text x="282.0" y="420.6">13</text></g>
+<g class="pin" data-i="14" tabindex="0" role="button" aria-label="14. Монсоро"><circle cx="200.2" cy="380.6" r="20"/><text x="200.2" y="387.6">14</text></g>
+<g class="pin" data-i="15" tabindex="0" role="button" aria-label="15. Кан-Сен-Мартен"><circle cx="206.8" cy="425.4" r="20"/><text x="206.8" y="432.4">15</text></g>
+<g class="pin" data-i="16" tabindex="0" role="button" aria-label="16. Сомюр"><circle cx="137.3" cy="352.2" r="20"/><text x="137.3" y="359.2">16</text></g>
+<g class="pin" data-i="17" tabindex="0" role="button" aria-label="17. Дом Ackerman"><circle cx="126.1" cy="304.7" r="20"/><text x="126.1" y="311.7">17</text></g>
+<g class="pin" data-i="18" tabindex="0" role="button" aria-label="18. Bouvet-Ladubay"><circle cx="82.7" cy="347.5" r="20"/><text x="82.7" y="354.5">18</text></g>
+<g class="pin" data-i="19" tabindex="0" role="button" aria-label="19. Вувре"><circle cx="546.5" cy="244.8" r="20"/><text x="546.5" y="251.8">19</text></g>
+<g class="pin" data-i="20" tabindex="0" role="button" aria-label="20. Шато де ла Бурдезьер"><circle cx="566.5" cy="301.1" r="20"/><text x="566.5" y="308.1">20</text></g>
+<g class="pin" data-i="21" tabindex="0" role="button" aria-label="21. Шато д'Артиньи"><circle cx="508.5" cy="335.2" r="20"/><text x="508.5" y="342.2">21</text></g>
+<g class="pin" data-i="22" tabindex="0" role="button" aria-label="22. Шато де Пре"><circle cx="646.6" cy="193.1" r="20"/><text x="646.6" y="200.1">22</text></g>
+<g class="pin" data-i="23" tabindex="0" role="button" aria-label="23. Шато де Шиссе"><circle cx="705.2" cy="338.4" r="20"/><text x="705.2" y="345.4">23</text></g>
+<g class="pin" data-i="24" tabindex="0" role="button" aria-label="24. Domaine des Hauts de Loire"><circle cx="725.6" cy="134.0" r="20"/><text x="725.6" y="141.0">24</text></g>
+<g class="pin" data-i="25" tabindex="0" role="button" aria-label="25. Fleur de Loire"><circle cx="800.6" cy="168.3" r="20"/><text x="800.6" y="175.3">25</text></g>
+<g class="pin" data-i="26" tabindex="0" role="button" aria-label="26. Hôtel Anne d'Anjou"><circle cx="173.6" cy="321.2" r="20"/><text x="173.6" y="328.2">26</text></g>
+</svg>
+  </div>
+  <div>
+<section><h2>Замки и сады</h2><div class="sub">ради чего едут в долину</div><ol><li id="c1" data-i="1"><span class="n">1</span><div class="b"><div class="t">Шамбор</div><div class="m">замок · Шамбор</div><p>Самый большой замок Луары: Франциск I начал его в 1519 году. Внутри знаменитая двойная винтовая лестница — по ней можно подниматься и спускаться, не встречаясь.</p><div class="lk"><a href="https://www.google.com/maps/search/?api=1&query=Ch%C3%A2teau%20de%20Chambord%2C%20%D0%A8%D0%B0%D0%BC%D0%B1%D0%BE%D1%80%2C%20France" target="_blank" rel="noopener">Google Maps</a></div></div></li><li id="c2" data-i="2"><span class="n">2</span><div class="b"><div class="t">Шенонсо</div><div class="m">замок · Шенонсо</div><p>«Замок дам» — галерея на арках прямо над рекой Шер. Им владели Диана де Пуатье и Екатерина Медичи.</p><div class="lk"><a href="https://www.google.com/maps/search/?api=1&query=Ch%C3%A2teau%20de%20Chenonceau%2C%20%D0%A8%D0%B5%D0%BD%D0%BE%D0%BD%D1%81%D0%BE%2C%20France" target="_blank" rel="noopener">Google Maps</a></div></div></li><li id="c3" data-i="3"><span class="n">3</span><div class="b"><div class="t">Королевский замок Амбуаз</div><div class="m">замок · Амбуаз</div><p>Королевская резиденция над Луарой с лучшим видом на реку. В часовне Сент-Юбер похоронен Леонардо да Винчи.</p><div class="lk"><a href="https://www.google.com/maps/search/?api=1&query=Ch%C3%A2teau%20Royal%20d'Amboise%2C%20%D0%90%D0%BC%D0%B1%D1%83%D0%B0%D0%B7%2C%20France" target="_blank" rel="noopener">Google Maps</a></div></div></li><li id="c4" data-i="4"><span class="n">4</span><div class="b"><div class="t">Кло-Люсе</div><div class="m">усадьба · Амбуаз</div><p>Последний дом Леонардо да Винчи, в десяти минутах пешком от замка Амбуаз. В парке — модели его изобретений.</p><div class="lk"><a href="https://www.google.com/maps/search/?api=1&query=Ch%C3%A2teau%20du%20Clos%20Luc%C3%A9%2C%20%D0%90%D0%BC%D0%B1%D1%83%D0%B0%D0%B7%2C%20France" target="_blank" rel="noopener">Google Maps</a></div></div></li><li id="c5" data-i="5"><span class="n">5</span><div class="b"><div class="t">Королевский замок Блуа</div><div class="m">замок · Блуа</div><p>Четыре эпохи архитектуры вокруг одного двора и открытая винтовая лестница Франциска I.</p><div class="lk"><a href="https://www.google.com/maps/search/?api=1&query=Ch%C3%A2teau%20Royal%20de%20Blois%2C%20%D0%91%D0%BB%D1%83%D0%B0%2C%20France" target="_blank" rel="noopener">Google Maps</a></div></div></li><li id="c6" data-i="6"><span class="n">6</span><div class="b"><div class="t">Шеверни</div><div class="m">замок · Шеверни</div><p>Больше пяти веков им владеет одна семья, и она до сих пор живёт в замке. Он вдохновил Эрже на Муленсар из «Тинтина».</p><div class="lk"><a href="https://www.google.com/maps/search/?api=1&query=Ch%C3%A2teau%20de%20Cheverny%2C%20%D0%A8%D0%B5%D0%B2%D0%B5%D1%80%D0%BD%D0%B8%2C%20France" target="_blank" rel="noopener">Google Maps</a></div></div></li><li id="c7" data-i="7"><span class="n">7</span><div class="b"><div class="t">Азе-ле-Ридо</div><div class="m">замок · Азе-ле-Ридо</div><p>Ренессансный замок на острове посреди реки Эндр, весь отражается в воде.</p><div class="lk"><a href="https://www.google.com/maps/search/?api=1&query=Ch%C3%A2teau%20d'Azay-le-Rideau%2C%20%D0%90%D0%B7%D0%B5-%D0%BB%D0%B5-%D0%A0%D0%B8%D0%B4%D0%BE%2C%20France" target="_blank" rel="noopener">Google Maps</a></div></div></li><li id="c8" data-i="8"><span class="n">8</span><div class="b"><div class="t">Л'Ислет</div><div class="m">замок · Азе-ле-Ридо</div><p>Небольшой ренессансный замок на реке Эндр рядом с Азе-ле-Ридо. Здесь гостили Роден и Камилла Клодель, замком до сих пор владеет семья.</p><div class="lk"><a href="https://www.google.com/maps/search/?api=1&query=Ch%C3%A2teau%20de%20l'Islette%2C%20%D0%90%D0%B7%D0%B5-%D0%BB%D0%B5-%D0%A0%D0%B8%D0%B4%D0%BE%2C%20France" target="_blank" rel="noopener">Google Maps</a></div></div></li><li id="c9" data-i="9"><span class="n">9</span><div class="b"><div class="t">Юссе</div><div class="m">замок · Риньи-Юссе</div><p>Тот самый «замок Спящей красавицы» с башенками. Частный — семья живёт здесь и пускает гостей.</p><div class="lk"><a href="https://www.google.com/maps/search/?api=1&query=Ch%C3%A2teau%20d'Uss%C3%A9%2C%20%D0%A0%D0%B8%D0%BD%D1%8C%D0%B8-%D0%AE%D1%81%D1%81%D0%B5%2C%20France" target="_blank" rel="noopener">Google Maps</a></div></div></li><li id="c10" data-i="10"><span class="n">10</span><div class="b"><div class="t">Шомон-сюр-Луар</div><div class="m">замок · Шомон-сюр-Луар</div><p>Замок на холме над Луарой, где с апреля по ноябрь проходит Международный фестиваль садов.</p><div class="lk"><a href="https://www.google.com/maps/search/?api=1&query=Domaine%20de%20Chaumont-sur-Loire%2C%20%D0%A8%D0%BE%D0%BC%D0%BE%D0%BD-%D1%81%D1%8E%D1%80-%D0%9B%D1%83%D0%B0%D1%80%2C%20France" target="_blank" rel="noopener">Google Maps</a></div></div></li><li id="c11" data-i="11"><span class="n">11</span><div class="b"><div class="t">Вилландри</div><div class="m">сады · Вилландри</div><p>Самые красивые ренессансные сады долины — и огород, разбитый как узор.</p><div class="lk"><a href="https://www.google.com/maps/search/?api=1&query=Ch%C3%A2teau%20de%20Villandry%2C%20%D0%92%D0%B8%D0%BB%D0%BB%D0%B0%D0%BD%D0%B4%D1%80%D0%B8%2C%20France" target="_blank" rel="noopener">Google Maps</a></div></div></li><li id="c12" data-i="12"><span class="n">12</span><div class="b"><div class="t">Ланже</div><div class="m">замок · Ланже</div><p>Средневековый замок в центре городка. Здесь в 1491 году Карл VIII женился на Анне Бретонской.</p><div class="lk"><a href="https://www.google.com/maps/search/?api=1&query=Ch%C3%A2teau%20de%20Langeais%2C%20%D0%9B%D0%B0%D0%BD%D0%B6%D0%B5%2C%20France" target="_blank" rel="noopener">Google Maps</a></div></div></li></ol></section>
+<section><h2>Городки и деревни</h2><div class="sub">погулять и остаться на закат</div><ol><li id="c13" data-i="13"><span class="n">13</span><div class="b"><div class="t">Шинон</div><div class="m">городок · Шинон</div><p>Королевская крепость над средневековыми улочками. Здесь Жанна д'Арк встретилась с Карлом VII.</p><div class="lk"><a href="https://www.google.com/maps/search/?api=1&query=Chinon%2C%20%D0%A8%D0%B8%D0%BD%D0%BE%D0%BD%2C%20France" target="_blank" rel="noopener">Google Maps</a></div></div></li><li id="c14" data-i="14"><span class="n">14</span><div class="b"><div class="t">Монсоро</div><div class="m">деревня · Монсоро</div><p>Белый замок прямо на берегу Луары. Деревня входит в список самых красивых деревень Франции.</p><div class="lk"><a href="https://www.google.com/maps/search/?api=1&query=Montsoreau%2C%20%D0%9C%D0%BE%D0%BD%D1%81%D0%BE%D1%80%D0%BE%2C%20France" target="_blank" rel="noopener">Google Maps</a></div></div></li><li id="c15" data-i="15"><span class="n">15</span><div class="b"><div class="t">Кан-Сен-Мартен</div><div class="m">деревня · Кан-Сен-Мартен</div><p>Деревня на слиянии Вьенны и Луары, тоже из «самых красивых деревень Франции». Закат над водой — отсюда.</p><div class="lk"><a href="https://www.google.com/maps/search/?api=1&query=Candes-Saint-Martin%2C%20%D0%9A%D0%B0%D0%BD-%D0%A1%D0%B5%D0%BD-%D0%9C%D0%B0%D1%80%D1%82%D0%B5%D0%BD%2C%20France" target="_blank" rel="noopener">Google Maps</a></div></div></li><li id="c16" data-i="16"><span class="n">16</span><div class="b"><div class="t">Сомюр</div><div class="m">город · Сомюр</div><p>Белый город на Луаре с замком над рекой. Сомюр — столица местного игристого и родина конной школы Кадр Нуар.</p><div class="lk"><a href="https://www.google.com/maps/search/?api=1&query=Ch%C3%A2teau%20de%20Saumur%2C%20%D0%A1%D0%BE%D0%BC%D1%8E%D1%80%2C%20France" target="_blank" rel="noopener">Google Maps</a></div></div></li></ol></section>
+<section><h2>Креман и вино</h2><div class="sub">дегустации в подвалах из туфа</div><ol><li id="c17" data-i="17"><span class="n">17</span><div class="b"><div class="t">Дом Ackerman</div><div class="m">игристое · Сомюр</div><p>Здесь в 1811 году начали делать первое игристое Сомюра по шампанскому методу. Дегустации и подвалы в туфе — та самая бутылка из ролика.</p><div class="lk"><a href="https://www.google.com/maps/search/?api=1&query=Maison%20Ackerman%2C%20%D0%A1%D0%BE%D0%BC%D1%8E%D1%80%2C%20France" target="_blank" rel="noopener">Google Maps</a></div></div></li><li id="c18" data-i="18"><span class="n">18</span><div class="b"><div class="t">Bouvet-Ladubay</div><div class="m">игристое · Сомюр</div><p>Дом игристого с 1851 года и километры подвалов в известняке — экскурсия с дегустацией.</p><div class="lk"><a href="https://www.google.com/maps/search/?api=1&query=Bouvet-Ladubay%2C%20%D0%A1%D0%BE%D0%BC%D1%8E%D1%80%2C%20France" target="_blank" rel="noopener">Google Maps</a></div></div></li><li id="c19" data-i="19"><span class="n">19</span><div class="b"><div class="t">Вувре</div><div class="m">вино · Вувре</div><p>Деревня виноделов у Тура: шенен блан, игристое и погреба, вырубленные прямо в скале.</p><div class="lk"><a href="https://www.google.com/maps/search/?api=1&query=Vouvray%2C%20%D0%92%D1%83%D0%B2%D1%80%D0%B5%2C%20France" target="_blank" rel="noopener">Google Maps</a></div></div></li></ol></section>
+<section><h2>Ночь в замке</h2><div class="sub">где остановиться хотя бы на одну ночь</div><ol><li id="c20" data-i="20"><span class="n">20</span><div class="b"><div class="t">Шато де ла Бурдезьер</div><div class="m">замок-отель · Монлуи-сюр-Луар</div><p>Замок-отель между Туром и Амбуазом, при нём огромная коллекция сортов томатов в саду.</p><div class="lk"><a href="https://www.google.com/maps/search/?api=1&query=Ch%C3%A2teau%20de%20la%20Bourdaisi%C3%A8re%2C%20%D0%9C%D0%BE%D0%BD%D0%BB%D1%83%D0%B8-%D1%81%D1%8E%D1%80-%D0%9B%D1%83%D0%B0%D1%80%2C%20France" target="_blank" rel="noopener">Google Maps</a></div></div></li><li id="c21" data-i="21"><span class="n">21</span><div class="b"><div class="t">Шато д'Артиньи</div><div class="m">замок-отель · Монбазон</div><p>Дворец над рекой Эндр, построенный парфюмером Франсуа Коти. Спа и парк.</p><div class="lk"><a href="https://www.google.com/maps/search/?api=1&query=Ch%C3%A2teau%20d'Artigny%2C%20%D0%9C%D0%BE%D0%BD%D0%B1%D0%B0%D0%B7%D0%BE%D0%BD%2C%20France" target="_blank" rel="noopener">Google Maps</a></div></div></li><li id="c22" data-i="22"><span class="n">22</span><div class="b"><div class="t">Шато де Пре</div><div class="m">замок-отель · Амбуаз</div><p>Небольшой замок-отель на склоне у Амбуаза — удобная база для Шенонсо и Кло-Люсе.</p><div class="lk"><a href="https://www.google.com/maps/search/?api=1&query=Ch%C3%A2teau%20de%20Pray%2C%20%D0%90%D0%BC%D0%B1%D1%83%D0%B0%D0%B7%2C%20France" target="_blank" rel="noopener">Google Maps</a></div></div></li><li id="c23" data-i="23"><span class="n">23</span><div class="b"><div class="t">Шато де Шиссе</div><div class="m">замок-отель · Шиссе-ан-Турен</div><p>Замок XV века на склоне над долиной Шера, в 15 минутах от Шенонсо. Номера в самом замке.</p><div class="lk"><a href="https://www.google.com/maps/search/?api=1&query=Ch%C3%A2teau%20de%20Chissay%2C%20%D0%A8%D0%B8%D1%81%D1%81%D0%B5-%D0%B0%D0%BD-%D0%A2%D1%83%D1%80%D0%B5%D0%BD%2C%20France" target="_blank" rel="noopener">Google Maps</a></div></div></li><li id="c24" data-i="24"><span class="n">24</span><div class="b"><div class="t">Domaine des Hauts de Loire</div><div class="m">замок-отель · Онзен</div><p>Охотничий дом XIX века в лесу между Блуа и Амбуазом, рядом Шомон.</p><div class="lk"><a href="https://www.google.com/maps/search/?api=1&query=Domaine%20des%20Hauts%20de%20Loire%2C%20%D0%9E%D0%BD%D0%B7%D0%B5%D0%BD%2C%20France" target="_blank" rel="noopener">Google Maps</a></div></div></li><li id="c25" data-i="25"><span class="n">25</span><div class="b"><div class="t">Fleur de Loire</div><div class="m">отель · Блуа</div><p>Отель шефа Кристофа Ая на набережной Блуа, с видом на реку и замок.</p><div class="lk"><a href="https://www.google.com/maps/search/?api=1&query=Fleur%20de%20Loire%2C%20%D0%91%D0%BB%D1%83%D0%B0%2C%20France" target="_blank" rel="noopener">Google Maps</a></div></div></li><li id="c26" data-i="26"><span class="n">26</span><div class="b"><div class="t">Hôtel Anne d'Anjou</div><div class="m">отель · Сомюр</div><p>Отель в стиле замка в центре Сомюра: особняк XVIII века на набережной Луары, прямо под замком.</p><div class="lk"><a href="https://www.google.com/maps/search/?api=1&query=H%C3%B4tel%20Anne%20d'Anjou%2C%20%D0%A1%D0%BE%D0%BC%D1%8E%D1%80%2C%20France" target="_blank" rel="noopener">Google Maps</a></div></div></li></ol></section>
+  </div>
+</div>
+<footer>
+  <div>Часы работы и цены меняются по сезону — перед поездкой проверьте на сайте места. Положение точек на карте примерное, точный адрес — по кнопке Google Maps.</div>
+  <div>Сохраняйте и подписывайтесь — <b>@anna.s.merci</b></div>
+</footer>
+</div>
+<script>
+const pins=document.querySelectorAll('.pin'),items=document.querySelectorAll('li[data-i]');
+const calm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function sel(i,scroll){pins.forEach(p=>p.classList.toggle('on',p.dataset.i==i));items.forEach(l=>l.classList.toggle('on',l.dataset.i==i));
+ if(scroll){const el=document.getElementById('c'+i);el&&el.scrollIntoView({behavior:calm?'auto':'smooth',block:'center'});}}
+pins.forEach(p=>{p.addEventListener('click',()=>sel(p.dataset.i,true));p.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();sel(p.dataset.i,true)}})});
+items.forEach(l=>l.addEventListener('mouseenter',()=>sel(l.dataset.i,false)));
+</script>
+
+</body>
+</html>
