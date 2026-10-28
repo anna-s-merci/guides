@@ -93,6 +93,8 @@ li p{margin:8px 0 0;max-width:60ch;color:#22375C}
 footer{margin-top:12px;padding:18px 20px;display:grid;gap:8px;font-size:13px;color:var(--mute)}
 footer b{color:var(--ink);font-weight:600}
 @media (max-width:820px){.grid{grid-template-columns:1fr}.map{position:static}}
+/* широкий экран: вертикальное фото целиком (церковь со шпилем), по бокам — то же фото размыто */
+@media (min-width:821px){.hero{position:relative}.hero::before{content:"";position:absolute;left:0;right:0;top:0;height:560px;border-radius:28px;background:url(hero.jpg) center/cover;filter:blur(28px) saturate(1.1);opacity:.75;clip-path:inset(0 round 28px)}.hero img{position:relative;height:560px;object-fit:contain;box-shadow:none;border-radius:0}.hero .card{z-index:1}}
 @media (max-width:600px){
   .hero img{height:380px;border-radius:24px;object-position:50% 52%}
   .hero .card{margin:-64px 10px 0;padding:18px}
